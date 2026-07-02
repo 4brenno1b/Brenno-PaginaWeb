@@ -25,15 +25,18 @@ background-color:#f4efe6;
 display: flex;
 margin:0 auto;
 padding:20px;
+display flex;
+flex-wrap: ;
 }
 
 article{
 display:flex;
 border: 1px solid #000000
-gap:30px;
-margin-bottom:40px;
-border-bottom:2px solid #d4b26a;
-padding-bottom:30px;
+gap: 16px;
+margin:16px;
+border:2px solid #d4b26a;
+padding:16px;
+flex: 1 1 25%;
 }
 
 img{
