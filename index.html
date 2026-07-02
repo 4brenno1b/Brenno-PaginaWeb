@@ -4,86 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Meu Blog Fitness</title>
-<style>
 
-body{
-background-color:#111111;
-font-family:Arial, Helvetica, sans-serif;
-margin:0;
-padding:20px;
-}
+<link rel="stylesheet" href="style.css">
 
-header{
-background-color:#1b1b1b;
-color:#f5c542;
-text-align:center;
-max-width:1000px;
-margin:0 auto;
-padding:20px;
-border:4px solid #f5c542;
-}
-
-header p{
-color:white;
-}
-
-main{
-background-color:#f4efe6;
-max-width:1000px;
-margin:0 auto;
-padding:20px;
-}
-
-article{
-display:flex;
-gap:30px;
-margin-bottom:40px;
-border-bottom:2px solid #d4b26a;
-padding-bottom:30px;
-}
-
-img{
-width:320px;
-height:320px;
-object-fit:cover;
-border-radius:12px;
-}
-
-.artigo-autor{
-font-weight:bold;
-}
-
-h2{
-font-size:40px;
-}
-
-button{
-padding:10px 15px;
-margin-right:10px;
-margin-top:10px;
-cursor:pointer;
-background-color:#f4efe6;
-border:2px solid #f5c542;
-color:#000000;
-border-radius:10px;
-transition:0.3s;
-}
-
-button:hover{
-background-color:#f5c542;
-}
-
-footer{
-background-color:#1b1b1b;
-color:#f5c542;
-text-align:center;
-max-width:1000px;
-margin:0 auto;
-padding:20px;
-font-size:22px;
-}
-
-</style>
 </head>
 
 <body>
@@ -170,6 +93,126 @@ que você coloca na sua mente.
 
 </article>
 
+<article>
+
+<img src="academia3.jpg"
+alt="Pessoa fazendo treino de pernas">
+
+<div>
+
+<h2>Dia de Pernas 💪</h2>
+
+<p class="artigo-autor">
+Por: Brenno
+</p>
+
+<p>
+O treino de pernas é essencial para desenvolver força, equilíbrio e resistência física.
+</p>
+
+<p>
+🏋️ Agachamento
+🏋️ Leg Press
+🏋️ Extensora
+</p>
+
+<button class="like">👍 <span>0</span></button>
+<button class="deslike">👎 <span>0</span></button>
+
+</div>
+
+</article>
+
+<article>
+
+<img src="academia4.jpg"
+alt="Pessoa correndo na esteira">
+
+<div>
+
+<h2>Importância do Cardio 🏃</h2>
+
+<p class="artigo-autor">
+Por: Brenno
+</p>
+
+<p>
+Os exercícios aeróbicos ajudam na saúde do coração e aumentam o gasto calórico.
+</p>
+
+<p>
+🔥 Esteira
+🔥 Bicicleta
+🔥 Corrida
+</p>
+
+<button class="like">👍 <span>0</span></button>
+<button class="deslike">👎 <span>0</span></button>
+
+</div>
+
+</article>
+
+<article>
+
+<img src="academia5.jpg"
+alt="Pessoa treinando braço">
+
+<div>
+
+<h2>Treino de Braços 💥</h2>
+
+<p class="artigo-autor">
+Por: Brenno
+</p>
+
+<p>
+Bíceps e tríceps fortes ajudam no desempenho de diversos exercícios da musculação.
+</p>
+
+<p>
+💪 Rosca Direta
+💪 Tríceps Pulley
+💪 Rosca Martelo
+</p>
+
+<button class="like">👍 <span>0</span></button>
+<button class="deslike">👎 <span>0</span></button>
+
+</div>
+
+</article>
+
+<article>
+
+<img src="academia6.jpg"
+alt="Alimentação saudável">
+
+<div>
+
+<h2>Alimentação e Resultados 🥗</h2>
+
+<p class="artigo-autor">
+Por: Brenno
+</p>
+
+<p>
+Uma alimentação equilibrada é tão importante quanto o treino para alcançar resultados.
+</p>
+
+<p>
+🍗 Proteínas
+🥦 Vegetais
+💧 Hidratação
+</p>
+
+<button class="like">👍 <span>0</span></button>
+<button class="deslike">👎 <span>0</span></button>
+
+</div>
+
+</article>
+
 </main>
 
 <footer>
@@ -179,62 +222,7 @@ que você coloca na sua mente.
 
 </footer>
 
-<script>
-
-const likes=document.querySelectorAll(".like");
-const deslikes=document.querySelectorAll(".deslike");
-
-likes.forEach(function(botao){
-
-let curtido=false;
-
-botao.addEventListener("click",function(){
-
-let texto=botao.querySelector("span");
-let numero=Number(texto.textContent);
-
-if(!curtido){
-
-texto.textContent=numero+1;
-curtido=true;
-
-}else{
-
-texto.textContent=numero-1;
-curtido=false;
-
-}
-
-});
-
-});
-
-deslikes.forEach(function(botao){
-
-let descurtido=false;
-
-botao.addEventListener("click",function(){
-
-let texto=botao.querySelector("span");
-let numero=Number(texto.textContent);
-
-if(!descurtido){
-
-texto.textContent=numero+1;
-descurtido=true;
-
-}else{
-
-texto.textContent=numero-1;
-descurtido=false;
-
-}
-
-});
-
-});
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
