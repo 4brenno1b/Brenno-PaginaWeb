@@ -1,50 +1,62 @@
-const likes=document.querySelectorAll(".like");
-const deslikes=document.querySelectorAll(".deslike");
+// Seleciona todos os cards de artigos
+const artigos = document.querySelectorAll("article");
 
-likes.forEach(function(botao){
-let curtido=false;
+artigos.forEach((artigo) => {
+  const btnLike = artigo.querySelector(".like");
+  const btnDeslike = artigo.querySelector(".deslike");
 
-botao.addEventListener("click",function(){
-let texto=botao.querySelector("span");
-let numero=Number(texto.textContent);
+  let estado = null; // null: neutro, 'like': curtido, 'deslike': descurtido
 
-if(!curtido){
-texto.textContent=numero+1;
-curtido=true;
-}else{
-texto.textContent=numero-1;
-curtido=false;
-}
+  btnLike.addEventListener("click", () => {
+    const spanLike = btnLike.querySelector("span");
+    const spanDeslike = btnDeslike.querySelector("span");
+
+    let numLike = Number(spanLike.textContent);
+    let numDeslike = Number(spanDeslike.textContent);
+
+    if (estado === "like") {
+      // Remove o like
+      spanLike.textContent = numLike - 1;
+      estado = null;
+    } else {
+      // Se já tinha deslike, remove o deslike primeiro
+      if (estado === "deslike") {
+        spanDeslike.textContent = numDeslike - 1;
+      }
+      // Adiciona o like
+      spanLike.textContent = numLike + 1;
+      estado = "like";
+    }
+  });
+
+  btnDeslike.addEventListener("click", () => {
+    const spanLike = btnLike.querySelector("span");
+    const spanDeslike = btnDeslike.querySelector("span");
+
+    let numLike = Number(spanLike.textContent);
+    let numDeslike = Number(spanDeslike.textContent);
+
+    if (estado === "deslike") {
+      // Remove o deslike
+      spanDeslike.textContent = numDeslike - 1;
+      estado = null;
+    } else {
+      // Se já tinha like, remove o like primeiro
+      if (estado === "like") {
+        spanLike.textContent = numLike - 1;
+      }
+      // Adiciona o deslike
+      spanDeslike.textContent = numDeslike + 1;
+      estado = "deslike";
+    }
+  });
 });
-});
 
-deslikes.forEach(function(botao){
-let descurtido=false;
+// Alternar Tema Escuro
+const btnTemaEscuro = document.querySelector(".btn-tema-escuro");
 
-botao.addEventListener("click",function(){
-let texto=botao.querySelector("span");
-let numero=Number(texto.textContent);
-
-if(!descurtido){
-texto.textContent=numero+1;
-descurtido=true;
-}else{
-texto.textContent=numero-1;
-descurtido=false;
-}
-});
-});
-
-const btnTemaEscuro=document.querySelector(".btn-tema-escuro");
-
-btnTemaEscuro.addEventListener("click",mudaTema);
-
-function mudaTema(){
-const corpo=document.body;
-
-if(corpo.classList.contains("tema-escuro")){
-corpo.classList.remove("tema-escuro");
-}else{
-corpo.classList.add("tema-escuro");
-}
+if (btnTemaEscuro) {
+  btnTemaEscuro.addEventListener("click", () => {
+    document.body.classList.toggle("tema-escuro");
+  });
 }
